@@ -1,5 +1,6 @@
-const db = global.db
-
+const db = require('../database');
+const db2 = require('../database');
+const db3 = require('../database');
 // model
 const Review = db.reviews
 
@@ -26,7 +27,7 @@ const addReview = async (req, res) => {
 
 const getAllReviews = async (req, res) => {
 
-    const reviews = await Review.findAll({})
+    const reviews = await Review.findAl({})
     res.status(200).send(reviews)
 
 }

@@ -1,4 +1,4 @@
-const db = global.db
+const db = require('../database');
 
 
 // create main Model
@@ -12,7 +12,6 @@ const Review = db.reviews
 const addProduct = async (req, res) => {
 
     let info = {
-        image: req.file.path,
         title: req.body.title,
         price: req.body.price,
         description: req.body.description,
