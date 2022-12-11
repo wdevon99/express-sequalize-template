@@ -25,5 +25,5 @@ module.exports = (db) => {
     
   db.Sequelize = Sequelize
   db.sequelize = sequelize
-  db.sequelize.sync({ force: false }).then(() => {console.log('=== Re-Sync Done! ===')})
+  db.sequelize.sync({ force: true, match: /_test$/ }).then(() => console.log('=== Re-Sync Done! ==='))
 }
