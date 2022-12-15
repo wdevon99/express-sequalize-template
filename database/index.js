@@ -6,11 +6,11 @@ class Database {
   db = {}
 
   constructor() {
-    console.log("==== ConfigureDatabase ====")
-
     ConfigureDatabase(this.db)
     ConfigureModels(this.db)
     ConfigureRelationships(this.db)
+
+    db.sequelize.sync({ force: true, match: /_test$/ }).then(() => console.log('=== Re-Sync Done! ==='))
   }
 }
 
